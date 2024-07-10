@@ -26,6 +26,16 @@ const App = () => {
       <button onClick={()=> dispatch(setType('Admin'))}>
         Set type
       </button> */}
+      <div>
+        {users.loading ? 'loading':null}
+      </div>
+      <ul>
+        { users ? 
+          users.users.map(user=>(
+            <li key={user.id}>{user.name}</li>
+          ))
+        :null}
+      </ul>
 
       <button onClick={()=>dispatch(fetchUser({id:'1'}))}>
         Get users
