@@ -13,7 +13,13 @@ export const moviesSlice = createSlice({
 
     },
     reducers:{
+        addMovie:(state, action)=>{
+            // const newMovie = {id:3,title:'Batman'};
+            state.list = [...state.list,action.payload]
+        }
+
     }
 });
 
+export const { addMovie } = moviesSlice.actions;
 export default moviesSlice.reducer;
